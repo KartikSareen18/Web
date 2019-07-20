@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page</title>
+<style>
+#task
+{
+	height:40px;
+	width:40px;
+	font-size:large;
+}
+#a
+{
+	height:40px;
+	width:400px;
+	border:1 px solid black;
+	border-radius:25px;
+	padding:5px;
+}
+</style>
+</head>
+<body>
+<input id="a" placeholder="Add Text">
+<button id="task">+</button>
+<br>
+<label id="lb1"></label>
+<label id="lb2"></label>
+<label id="lb3"></label>
+<label id="lb4"></label><br>
+<ol id="list">
+</ol>
+</body>
+
+<script>
+var parent=document.getElementById("list");
+var btn=document.getElementById("task");
+var inp=document.getElementById("a");
+btn.addEventListener("mousemove",function(e)
+		{
+			btn.setAttribute("style","background-color:black;color:white");
+		});
+btn.addEventListener("mouseout",function(e)
+		{
+			btn.setAttribute("style","background-color:white;color:black");
+		});
+inp.addEventListener("mouseover",function(e)
+		{
+			inp.setAttribute("style","background-color:black;color:white");
+		});
+inp.addEventListener("mouseout",function(e)
+		{
+			inp.setAttribute("style","background-color:white;color:black");
+		});
+inp.addEventListener("mousemove",function(e)
+		{
+			var lb1=document.getElementById("lb1");
+			lb1.innerHTML=e.pageX;
+			var lb2=document.getElementById("lb2");
+			lb2.innerHTML=e.pageY;
+			var lb3=document.getElementById("lb3");
+			lb3.innerHTML=e.x;
+			var lb4=document.getElementById("lb4");
+			lb4.innerHTML=e.y;
+		});
+btn.onclick=function()
+{
+	if(inp.value=="")
+		alert("Provide Input!");
+	else
+	{
+		var node=document.createElement("li");
+		node.setAttribute("class","li");
+		node.setAttribute("style","color:red;");
+		node.style.background="black";
+		node.style.border="1px solid blue";
+		node.style.width="350px";
+		node.style.height="30px";
+		node.style.borderRadius="25px";
+		node.style.padding="7px";
+		node.style.margin="5px";
+		node.innerHTML=inp.value;
+		var node1=document.createElement("button");
+		node1.innerHTML="X";
+		node1.setAttribute("class","button");
+		node1.style.background="green";
+		inp.value="";
+		node.appendChild(node1);
+		node1.style.float="right";	
+		parent.appendChild(node);
+		node1.onclick=function()
+		{
+			parent.removeChild(node);
+		}
+	}
+}
+</script>
+</html>

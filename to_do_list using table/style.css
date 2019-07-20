@@ -1,0 +1,35 @@
+.input
+{
+	border-radius:10px;
+	height:30px;
+	width:200px;
+	padding-left:15px;
+	border:0.5px solid gray;
+	background:black;
+	color:white;
+}
+
+.btn
+{
+	height: 34px;
+	width: 32px;
+        background: black;
+        border-radius: 14px;
+        color: white;
+        lborder: 0.5px solid gray;
+}
+
+.table1
+{
+	background:gray;
+	text-size:large;
+
+}
+
+.del
+{
+	background:black;
+	border-radius:23px;
+	border:0.5px solid gray;
+	color:red;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page</title>
+<style>
+#a
+{
+	background:black;
+	color:red;
+	height:40px;
+	width:400px;
+	border:1 px solid black;
+	border-radius:25px;
+	padding:5px;
+}
+</style>
+</head>
+<body>
+<input id="a" placeholder="Add Text">
+<ol id="list">
+</ol>
+</body>
+<script>
+var parent=document.getElementById("list");
+var inp=document.getElementById("a");
+inp.onkeyup=function(event)
+{
+	var code=event.keyCode;
+	if(code==13)
+	{
+		var node=document.createElement("li");
+		node.setAttribute("class","li");
+		node.setAttribute("style","color:red;");
+		node.style.background="black";
+		node.style.border="1px solid blue";
+		node.style.width="350px";
+		node.style.height="30px";
+		node.style.borderRadius="25px";
+		node.style.padding="7px";
+		node.style.margin="5px";
+		node.innerHTML=inp.value;
+		inp.value="";
+		var node1=document.createElement("button");
+		node1.innerHTML="X";
+		node1.setAttribute("class","button");
+		node1.style.float="right";
+		node1.style.background="green";
+		node.appendChild(node1);
+		parent.appendChild(node);
+		node1.onclick=function()
+		{
+			parent.removeChild(node);
+		}
+	}
+}
+</script>
+</html>
