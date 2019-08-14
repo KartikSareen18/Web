@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <title>CQ</title>
+        <meta name="viewport" content="width=device-width" initial-scale="1.0">
+        <link href="/css/sidebar.css" rel="stylesheet" type = "text/css">
+        <link href="/css/header.css" rel="stylesheet" type = "text/css">
+        <link href="/css/addNewCommunity.css" rel="stylesheet" type = "text/css">
+        <link href="/css/profilecss.css" rel="stylesheet" type = "text/css">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" >
+        <!-- BOOTSTRAP 3-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/js/openpanel.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+        
+        <link rel="stylesheet" type="text/css" href="/css/trumbowgy.css">
+
+         <style>
+
+    #commHeader
+{
+    background-image: linear-gradient(to bottom, #4ba2b7, #42a6be, #38aac6, #29adcd, #0fb1d5);
+
+}
+#first-btn
+{
+    border: 1px solid #fff !important;
+    color: #fff !important;
+    border-bottom: 4px solid #fff !important;
+    background-color: rgba(255,255,255,0.1) !important;
+    margin-left: 100px;
+}
+#search-btn
+{
+    background-color: rgba(255,255,255,0.1);
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+  </style>
+
+
+    </head>
+
+    <body class="body">
+        <% include partials/usertop-bar.ejs %>
+        <div id="viewscreen" >
+            <% include partials/side-navbar.ejs %>
+  
+            <div id="rightview">
+                <div class="container-fluid div-min-width" style="padding:0">
+                    <div class="row">
+                        <div class="col-lg-12" style="padding:0;">
+                    <div>
+                      <div class="community-header-top" id="commHeader" style="height:50px;padding-top:6px; padding-left:140px;">
+                          <div class="col-sm-12 community-sub-head">
+                              <a class="btn community-head-btn active" href="#" id="first-btn">
+                                <i class="fa fa-users"></i>
+                              </a>
+                              <a class="btn community-head-btn" style="margin-left:10px" href="#" onclick="searchingCommunity()" id="search-btn">
+                                <i class="fa fa-search"></i>
+                              </a>
+                          </div>
+                      </div>
+                       <div class="container" style="margin-top:10px; padding:0px;">
+                        <div class="form-horizontal col-sm-3 col-md-3 col-lg-3"></div>
+
+                        <div class="form-horizontal col-sm-6 col-md-6 col-lg-6">
+                         <h3 class="page-header" style="color:#707070">Create Community</h3>
+
+                        
+
+                           <div class="form-group">
+                              <input class="form-control" type="text" required="" name="communityName" placeholder="Name" maxlength="70" id="commName">
+                            </div>
+
+               <div class="form-group">
+                    <label style="color:#707070">Description</label>
+                    <div>
+                      <textarea class="trumbowyg-textarea" rows="10" id="description" name="communityDescription" style="overflow: hidden; height: 260px;" required="" tabindex="-1"></textarea>
+            </div>
+
+            <div class="form-group ">
+                <label style="color:#707070">Rule :</label>
+                <input class="radio radio-inline" type="radio" checked="" value="Direct" name="communityMembershipRule" id="directadmin"> Direct
+                <input class="radio radio-inline" type="radio" value="Permission" name="communityMembershipRule" id="permisadmin"> Permission
+            </div>
+            <div class="form-group" style="display:none;">
+                <input class="form-control" id="file" name="communityImage" type="file">
+            </div>
+
+             <div class="form-group">
+              <form action="/uploadcomm" enctype="multipart/form-data" method="POST">
+                                                                <input type="file" name="myFile" accept="image/*" />
+                                                                <input type="submit" value="Change"/>
+                                                            </form>
+            </div>
+
+            
+
+            <div class="form-group">
+                    <input class="form-control btn btn-primary" type="submit" value="Create Community" id="adding">
+            </div>
+
+                         
+        
+                        </div>
+
+                        
+                         
+                      </div>
+                    </div>
+                 </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+        
+
+<script src="/js/trumbowgy.js"></script>
+<script src="/js/addNewCommunity.js"></script>
+	</body>
+	</html>
+

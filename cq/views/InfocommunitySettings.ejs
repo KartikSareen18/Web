@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <title>CQ</title>
+        <meta name="viewport" content="width=device-width" initial-scale="1.0">
+        <link href="/css/sidebar.css" rel="stylesheet" type = "text/css">
+        <link href="/css/header.css" rel="stylesheet" type = "text/css">
+        <link href="/css/addNewCommunity.css" rel="stylesheet" type = "text/css">
+        <link href="/css/communityInfo.css" rel="stylesheet" type = "text/css">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" >
+        <!-- BOOTSTRAP 3-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/js/openpanel.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+        
+        <link rel="stylesheet" type="text/css" href="/css/trumbowgy.css">
+
+         <style>
+
+    #commHeader
+{
+    background-image: linear-gradient(to bottom, #4ba2b7, #42a6be, #38aac6, #29adcd, #0fb1d5);
+
+}
+#first-btn
+{
+    border: 1px solid #fff !important;
+    color: #fff !important;
+    border-bottom: 4px solid #fff !important;
+    background-color: rgba(255,255,255,0.1) !important;
+    margin-left: 100px;
+}
+#search-btn
+{
+    background-color: rgba(255,255,255,0.1);
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+#dpimage
+{
+    cursor: pointer !important;
+    width: 40px;
+    margin-left: 30px;
+    margin-top: 10px;
+    margin-right: 10px;
+    float: right;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 0;
+}
+
+  </style>
+
+
+    </head>
+
+    <body class="body">
+        <% include partials/usertop-bar.ejs %>
+        <div id="viewscreen" >
+            <% include partials/side-navbar.ejs %>
+  
+            <div id="rightview">
+                <div class="container-fluid div-min-width" style="padding:0">
+                    <div class="row">
+                        <div class="col-lg-12" style="padding:0;">
+
+
+<div class="community-header-top communityheader-profile-mobile" style="padding-top:6px;position:relative;">
+  
+    <center>
+        <div class="communityprofile-name-mobile" style="max-height:40px;overflow:scroll">
+          <a href="" style="color:white">
+            
+          </a>
+        </div>
+    </center>
+
+   
+
+</div>
+
+<!-- second -->
+
+
+<div class="container community-profile-conatiner">
+<div class="col-sm-2 col-xs-12 center-mobile pc">
+<a href="">
+  <img src="/<%=newdata.commphoto%>" class="img-communityprofile-pic allSides" style="background:#fff">
+</a>
+</div>
+
+<div class="col-sm-8 communityprofile-name-pc communityprofile-system">
+  <a href="" class="communityprofile-name-pc">
+     <p><%=newdata.name%></p>
+  </a>
+</div>
+
+<div class="col-sm-2 col-xs-12 center-mobile" style="padding-top:10px;float:right">
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle commuity-profile-menu-btn" type="button" data-toggle="dropdown">
+    <i class="fa fa-bars"></i>
+  </button>
+  <ul class="dropdown-menu custom-commuity-dropdown dropdown-menu-right" style="margin-top:40px">
+
+    
+      <li>
+          <a href="/discussion/<%=newdata._id%>" class="community-profile-option-btn">
+            Discussions
+          </a>
+      </li>
+    
+
+    
+      <li>
+          <a href="/setting/<%=newdata._id%>" class="community-profile-option-btn">
+            Manage Community
+          </a>
+      </li>
+    
+
+      <li>
+          <a href="/<%=newdata._id%>" class="community-profile-option-btn">
+            Community Profile
+          </a>
+      </li>
+
+      <li>
+          <a href="" class="community-profile-option-btn">
+            Community Members
+          </a>
+      </li>
+
+    </ul>
+</div>
+</div>
+
+
+</div>
+
+<!-- third -->
+
+<center>
+    <hr style="border-top:2px solid #E6E6E6;width:85%;margin-top:0">
+</center>
+<style>
+  .child-reply-input{
+    display: none !important;
+  }
+</style>
+
+<!--  for -->
+
+
+<div class="container">
+<div class="col-sm-12 col-xs-12 col-lg-12 col-md-12" style="padding-bottom:5px;border-bottom:1px solid #c4c4c4">
+  <nonlink class="manageCommunity-head-btn" style="cursor: context-menu;">
+    Manage Community
+  </nonlink>
+  <a href="/inviteUser/<%=newdata._id%>" style="float:right;font-weight:600">
+    Invite Users
+  </a>
+  
+  <a class="pc" href="/editCommunity/<%=newdata._id%>" style="float:right;font-weight:600;margin-right:15px">
+    Edit Community
+  </a>
+  
+</div>
+
+    
+  </div>
+  <div class="col-sm-3 col-lg-3 col-md-3 col-xs-7 manageCommunity-commuity-div" style="margin-left: 10%;">
+
+    <input type="text" class="form-control" id="finding-input" placeholder="Enter name..." style="margin-top:4px;" onkeyup="findUsers()">
+
+  </div>
+  <div class="col-sm-7 col-lg-7 col-md-7 col-xs-5" style="border-left:1px solid #CCCCCC">
+    <div id="comlist">
+
+
+      <div class="col-sm-12 allcoms well well-sm" style="margin-top:5px;font-weight:bold" id="">  <center>No any user</center>  </div>  </div>
+  </div>
+</div>
+
+</div> <!--Header-->
+
+    
+
+</div></div></div>
+
+
+                    <div>
+                      
+                 </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+  
+
+
+  </body>
+  </html>

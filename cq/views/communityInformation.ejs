@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <title>CQ</title>
+        <meta name="viewport" content="width=device-width" initial-scale="1.0">
+        <link href="/css/sidebar.css" rel="stylesheet" type = "text/css">
+        <link href="/css/header.css" rel="stylesheet" type = "text/css">
+        <link href="/css/addNewCommunity.css" rel="stylesheet" type = "text/css">
+        <link href="/css/communityInfo.css" rel="stylesheet" type = "text/css">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" >
+        <!-- BOOTSTRAP 3-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/js/openpanel.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+        
+        <link rel="stylesheet" type="text/css" href="/css/trumbowgy.css">
+
+         <style>
+
+    #commHeader
+{
+    background-image: linear-gradient(to bottom, #4ba2b7, #42a6be, #38aac6, #29adcd, #0fb1d5);
+
+}
+#first-btn
+{
+    border: 1px solid #fff !important;
+    color: #fff !important;
+    border-bottom: 4px solid #fff !important;
+    background-color: rgba(255,255,255,0.1) !important;
+    margin-left: 100px;
+}
+#search-btn
+{
+    background-color: rgba(255,255,255,0.1);
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+  </style>
+
+
+    </head>
+
+    <body class="body">
+        <% include partials/usertop-bar.ejs %>
+        <div id="viewscreen" >
+            <% include partials/side-navbar.ejs %>
+  
+            <div id="rightview">
+                <div class="container-fluid div-min-width" style="padding:0">
+                    <div class="row">
+                        <div class="col-lg-12" style="padding:0;">
+
+
+<div class="community-header-top communityheader-profile-mobile" style="padding-top:6px;position:relative;">
+    <div class="container pc">
+    
+          
+            <!--button class="btn btn-info community-panel-btn joinBtn" data-id="1" style="float:right" onclick="joinCommunity()"> Join <i class="fa fa-plus"></i></button>-->
+          
+    
+</div>
+    <center>
+        <div class="communityprofile-name-mobile" style="max-height:40px;overflow:scroll">
+          <a href="/community/communityprofile/5cf3ae500a79ed14395259a5" style="color:white">
+            
+          </a>
+        </div>
+    </center>
+
+   
+
+</div>
+
+<!-- second -->
+
+
+<div class="container community-profile-conatiner">
+<div class="col-sm-2 col-xs-12 center-mobile pc">
+<a href="/community/communityprofile/5cf3ae500a79ed14395259a5">
+  <img src="/<%= newdata.commphoto%>" class="img-communityprofile-pic allSides" style="background:#fff">
+</a>
+</div>
+
+<div class="col-sm-8 communityprofile-name-pc communityprofile-system">
+  <a href="/community/communityprofile/5cf3ae500a79ed14395259a5" class="communityprofile-name-pc">
+     <p><%= newdata.name %></p>
+  </a>
+</div>
+
+
+</div>
+
+<!-- third -->
+
+<center>
+    <hr style="border-top:2px solid #E6E6E6;width:85%;margin-top:0">
+</center>
+<style>
+  .child-reply-input{
+    display: none !important;
+  }
+</style>
+
+<!--  for -->
+
+
+<div class="container" style="width:94% !important">
+      
+    <div class="col-sm-3 col-xs-12">
+      <div class="panel panel-default allSidesSoft" style="border-radius:0;margin-left: 10%;">
+        
+        <div class="panel-body" style="border:0;border-radius:0;">
+          
+              <div class="col-sm-12 col-xs-12 center-all">
+                
+                      
+                        <!--button class="btn btn-primary joinBtn" data-id="1"> Join <i class="fa fa-plus"></i></button>-->
+                      
+                
+              </div>
+          
+        </div>
+        <div class="panel-footer community-panel-sideBtn-link">
+          
+            <p class="center-all" style="margin:0">
+              <%= newdata.memberno %> Members
+            </p>
+          
+        </div>
+      </div>
+
+        <div class="panel panel-default allSidesSoft" style="border-radius:0;margin-left: 10%;">
+          <div class="panel-heading" style="border:0;border-radius:0">
+            Community Managers
+          </div>
+          <div class="panel-body" style="border:0;border-radius:0">
+            <div id="commuity-owner-detail">
+              <!--Owner Info-->
+            <div class="col-sm-12 col-md-12 col-lg-12 adminInfo">  <div class="col-sm-6 col-md-6 col-lg-4 col-xs-4 center-all">      <a href="/viewprofile/5cbf11fe56f5d9f21a83ab3c"><img src="/uploads/default.png" style="width: 40px;height: 40px;" class="adminPic allSides" id="dpimage"></a>  </div><div class="col-sm-6 col-md-6 col-lg-8 col-xs-8 adminContent" style="padding:0">  <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12" style="padding:0">    <span class="label label-success" style="margin-top:10px;">Owner</span>  </div>   <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12" style="padding:0;">     <a href="/viewprofile/5cbf11fe56f5d9f21a83ab3c"><%= newdata.owner %></a>   </div></div></div></div>
+            <div id="commuity-admins-detail">
+              <!--Admin Info-->
+            </div>
+          </div>
+        </div>
+    </div>
+    <style>
+      .full-description{
+        display:none;
+      }
+      .less-description-btn{
+        display: none;
+      }
+    </style>
+    <div class="col-sm-8 col-xs-12 separator-community-admin" style="padding:0 10px 10px 10px;">
+
+      <div class="panel panel-default allSidesSoft" style="border-radius:0">
+        <div class="panel-heading center-all" style="border:0;border-radius:0">
+          About Community
+        </div>
+        <div class="panel-body" style="border:0;border-radius:0;">
+          
+          
+              <p class="short-description center-all">
+               <%= newdata.desc %>
+                
+              </p>
+              <div class="full-description">
+                lkds
+              </div>
+          
+        </div>
+        
+      </div>
+
+        <div class="col-sm-12" id="needGlobalInProfile" style="padding:0">
+            <!--Here global will come-->
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+                    <div>
+                      
+                 </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+        
+<script src="/js/joinNewCommunity.js"></script>
+	</body>
+	</html>
